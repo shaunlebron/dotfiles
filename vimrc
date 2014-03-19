@@ -1,14 +1,16 @@
-syntax on
-set autoindent
-filetype plugin indent on
-set nu
+syntax on                           " use default syntax highlighting colors
+set autoindent                      " simple indent (follows preceding line)
+filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
+set number                          " number lines
 
-set expandtab
-set shiftwidth=2
-set softtabstop=2
-set tabstop=2
+set expandtab                       " expand tabs to spaces when inserting
+set tabstop=2                       " number of spaces a tab counts for
+set softtabstop=2                   " something about a mix of tabs and spaces? idk
+set shiftwidth=2                    " number of spaces to shift when using "<<" or ">>"
 
-set cursorline
+set cursorline                      " highlight current line
 
-" Treat hyphen "-" as a word symbol when using clojure
-au BufNewFile,BufRead *.clj,*.cljs set lisp
+au FileType clojure set lisp        " Treat hyphen "-" as a word symbol when using clojure
+
+set modeline                        " enable modeline (reading comment line in file for file-specific vim settings)
+set modelines=2                     " look for modeline in last two lines of file

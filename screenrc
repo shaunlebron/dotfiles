@@ -1,0 +1,10 @@
+
+# taken from http://aperiodic.net/screen/commands:hardstatus
+hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]' 
+
+# added to make sure ~/.bash_profile is sourced.
+# from: http://www.linuxquestions.org/questions/linux-general-1/screen-1-not-sourcing-~-bash_profile-466355/
+shell -$SHELL
+
+# redraws terminal lines after exiting fullscreen processes (e.g. less, vim)
+altscreen on

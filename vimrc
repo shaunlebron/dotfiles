@@ -6,11 +6,11 @@ set number                          " number lines
 set expandtab                       " expand tabs to spaces when inserting
 set tabstop=2                       " number of spaces a tab counts for
 set softtabstop=2                   " something about a mix of tabs and spaces? idk
-set shiftwidth=2                    " number of spaces to shift when using "<<" or ">>"
+set shiftwidth=2                    " number of spaces to shift when using '<<' or '>>'
 
 set cursorline                      " highlight current line
 
-au FileType clojure set lisp        " Treat hyphen "-" as a word symbol when using clojure
+au FileType clojure set lisp        " Treat hyphen '-' as a word symbol when using clojure
 
 set modeline                        " enable modeline (reading comment line in file for file-specific vim settings)
 set modelines=2                     " look for modeline in last two lines of file

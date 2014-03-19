@@ -3,6 +3,9 @@ set autoindent                      " simple indent (follows preceding line)
 filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
 set number                          " number lines
 
+set hlsearch                        " highlight text that matches search
+set incsearch                       " incrementally highlight results as search is typed
+
 set expandtab                       " expand tabs to spaces when inserting
 set tabstop=2                       " number of spaces a tab counts for
 set softtabstop=2                   " something about a mix of tabs and spaces? idk

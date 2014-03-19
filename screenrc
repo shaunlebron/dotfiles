@@ -1,3 +1,6 @@
+startup_message off
+defscrollback 10240
+vbell off
 
 # taken from http://aperiodic.net/screen/commands:hardstatus
 hardstatus alwayslastline '%{= kG}[ %{G}%H %{g}][%= %{= kw}%?%-Lw%?%{r}(%{W}%n*%f%t%?(%u)%?%{r})%{w}%?%+Lw%?%?%= %{g}][%{B} %d/%m %{W}%c %{g}]' 

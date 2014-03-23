@@ -1,7 +1,32 @@
-execute pathogen#infect()
-let g:slime_target = "tmux"         " set slime to use tmux
+"==================================================================================
+" VUNDLE (auto-install plugins):
+" > git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+" > vim +BundleInstall
+"==================================================================================
+set nocompatible
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+Bundle 'kien/ctrlp.vim'
+Bundle 'scrooloose/nerdtree'
+Bundle 'jistr/vim-nerdtree-tabs'
+Bundle 'plasticboy/vim-markdown'
+Bundle 'majutsushi/tagbar'
+Bundle 'jpalardy/vim-slime'
 
-set backspace=indent,eol,start
+"==================================================================================
+" PLUGINS
+"==================================================================================
+let g:slime_target = "tmux"         " set slime to use tmux
+map <C-n> :NERDTreeTabsToggle<CR>
+                                    " C-n to toggle file browser
+
+"==================================================================================
+" GENERAL
+"==================================================================================
+
+set backspace=indent,eol,start      " make backspace work in insert mode
 
 syntax on                           " use default syntax highlighting colors
 set autoindent                      " simple indent (follows preceding line)

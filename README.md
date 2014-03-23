@@ -11,6 +11,7 @@ ln -s vimrc ~/.vimrc
 ln -s screenrc ~/.screenrc
 ln -s tmux.conf ~/.tmux.conf
 ln -s ctags ~/.ctags
+ln -s lein_profiles.clj ~/.lein/profiles.clj
 ```
 
 Resources

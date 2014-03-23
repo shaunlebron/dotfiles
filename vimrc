@@ -1,3 +1,8 @@
+execute pathogen#infect()
+let g:slime_target = "tmux"         " set slime to use tmux
+
+set backspace=indent,eol,start
+
 syntax on                           " use default syntax highlighting colors
 set autoindent                      " simple indent (follows preceding line)
 filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
@@ -12,8 +17,6 @@ set softtabstop=2                   " something about a mix of tabs and spaces? 
 set shiftwidth=2                    " number of spaces to shift when using '<<' or '>>'
 
 set cursorline                      " highlight current line
-
-au FileType clojure set lisp        " Treat hyphen '-' as a word symbol when using clojure
 
 set modeline                        " enable modeline (reading comment line in file for file-specific vim settings)
 set modelines=2                     " look for modeline in last two lines of file

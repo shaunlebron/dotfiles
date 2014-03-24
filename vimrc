@@ -11,7 +11,6 @@ Bundle 'gmarik/vundle'
 Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'plasticboy/vim-markdown'
 Bundle 'majutsushi/tagbar'
 Bundle 'jpalardy/vim-slime'
 Bundle 'tpope/vim-fugitive'
@@ -22,12 +21,11 @@ Bundle 'tpope/vim-fugitive'
 let g:slime_target = "tmux"         " set slime to use tmux
 map <C-n> :NERDTreeTabsToggle<CR>
                                     " C-n to toggle file browser
-au BufRead * normal zR
-                                    " unfold everything (not sure why I need to do this.)
 
 "==================================================================================
 " GENERAL
 "==================================================================================
+"
 
 set backspace=indent,eol,start      " make backspace work in insert mode
 
@@ -35,6 +33,8 @@ syntax on                           " use default syntax highlighting colors
 set autoindent                      " simple indent (follows preceding line)
 filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
 set number                          " number lines
+
+set nofoldenable
 
 set hlsearch                        " highlight text that matches search
 set incsearch                       " incrementally highlight results as search is typed

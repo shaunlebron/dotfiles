@@ -14,6 +14,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'plasticboy/vim-markdown'
 Bundle 'majutsushi/tagbar'
 Bundle 'jpalardy/vim-slime'
+Bundle 'tpope/vim-fugitive'
 
 "==================================================================================
 " PLUGINS
@@ -21,6 +22,8 @@ Bundle 'jpalardy/vim-slime'
 let g:slime_target = "tmux"         " set slime to use tmux
 map <C-n> :NERDTreeTabsToggle<CR>
                                     " C-n to toggle file browser
+au BufRead * normal zR
+                                    " unfold everything (not sure why I need to do this.)
 
 "==================================================================================
 " GENERAL

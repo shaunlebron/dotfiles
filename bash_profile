@@ -13,3 +13,6 @@ PS1='\[\e]0;\w\a\]\n\[\e[32m\]\u@\h \[\e[33m\]\w\[\e[0m\]\n\$ '
 export EDITOR="vim"
 export VISUAL="vim"
 set -o vi
+
+shopt -s extglob  # extended glob
+shopt -s lithist  # literal history (keep newlines)

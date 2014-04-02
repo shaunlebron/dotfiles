@@ -48,3 +48,5 @@ set cursorline                      " highlight current line
 
 set modeline                        " enable modeline (reading comment line in file for file-specific vim settings)
 set modelines=2                     " look for modeline in last two lines of file
+
+set nowrap

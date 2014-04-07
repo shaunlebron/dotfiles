@@ -69,7 +69,6 @@ let g:tagbar_type_clojure = {
     \ 'c:definition (once)',
     \ 's:struct',
     \ 'v:intern',
-    \ 'n:namespace',
     \ 'h:hiccup template'
   \ ]
 \ }

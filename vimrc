@@ -21,6 +21,8 @@ Bundle 'tpope/vim-fugitive'
 let g:slime_target = "tmux"         " set slime to use tmux
 map <C-n> :NERDTreeTabsToggle<CR>
                                     " C-n to toggle file browser
+map <C-m> :TagbarToggle<CR>
+                                    " C-n to toggle file browser
 
 "==================================================================================
 " GENERAL

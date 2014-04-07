@@ -25,7 +25,6 @@ map <C-n> :NERDTreeTabsToggle<CR>
 "==================================================================================
 " GENERAL
 "==================================================================================
-"
 
 set backspace=indent,eol,start      " make backspace work in insert mode
 
@@ -50,3 +49,26 @@ set modeline                        " enable modeline (reading comment line in f
 set modelines=2                     " look for modeline in last two lines of file
 
 set nowrap
+
+"==================================================================================
+" Tagbar languages
+"==================================================================================
+
+let g:tagbar_type_clojure = {
+  \ 'ctagstype' : 'clojure',
+  \ 'kinds' : [
+    \ 'n:namespace',
+    \ 'd:definition',
+    \ 'f:function',
+    \ 'm:macro',
+    \ 'i:inline',
+    \ 'a:multimethod definition',
+    \ 'b:multimethod instance',
+    \ 'c:definition (once)',
+    \ 's:struct',
+    \ 'v:intern',
+    \ 'n:namespace',
+    \ 'h:hiccup template'
+  \ ]
+\ }
+

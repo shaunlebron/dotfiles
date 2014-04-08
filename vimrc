@@ -60,6 +60,7 @@ let g:tagbar_type_clojure = {
   \ 'ctagstype' : 'clojure',
   \ 'kinds' : [
     \ 'n:namespace',
+    \ 'z:atom',
     \ 'd:definition',
     \ 'f:function',
     \ 'm:macro',

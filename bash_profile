@@ -2,6 +2,7 @@ export PATH=~/bin:$PATH
 
 # installed from `brew install coreutils`
 alias ls='gls --color --group-directories-first'
+alias grep='grep --color=auto'
 
 BREW=`brew --prefix`
 alias vim="$BREW/bin/vim"

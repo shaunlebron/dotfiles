@@ -14,6 +14,7 @@ Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'majutsushi/tagbar'
 Bundle 'jpalardy/vim-slime'
 Bundle 'tpope/vim-fugitive'
+Bundle 'groenewege/vim-less'
 
 "==================================================================================
 " PLUGINS

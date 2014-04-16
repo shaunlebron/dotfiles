@@ -15,6 +15,8 @@ Bundle 'majutsushi/tagbar'
 Bundle 'jpalardy/vim-slime'
 Bundle 'tpope/vim-fugitive'
 Bundle 'groenewege/vim-less'
+Bundle 'godlygeek/tabular'
+Bundle 'alfredodeza/jacinto.vim'
 
 "==================================================================================
 " PLUGINS

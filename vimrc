@@ -17,6 +17,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'groenewege/vim-less'
 Bundle 'godlygeek/tabular'
 Bundle 'alfredodeza/jacinto.vim'
+Bundle 'flazz/vim-colorschemes'
 
 "==================================================================================
 " PLUGINS
@@ -26,6 +27,13 @@ map <C-n> :NERDTreeTabsToggle<CR>
                                     " C-n to toggle file browser
 map <C-m> :TagbarToggle<CR>
                                     " C-n to toggle file browser
+
+if has("gui_macvim")
+    " colorscheme bclear
+    " colorscheme railscasts
+    colorscheme underwater
+    " colorscheme Monokai
+endif
 
 "==================================================================================
 " GENERAL

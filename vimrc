@@ -63,6 +63,9 @@ set modelines=2                     " look for modeline in last two lines of fil
 
 set nowrap
 
+autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
 "==================================================================================
 " Tagbar languages
 "==================================================================================

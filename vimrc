@@ -12,20 +12,20 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'scrooloose/nerdtree'
 Bundle 'jistr/vim-nerdtree-tabs'
 Bundle 'majutsushi/tagbar'
-Bundle 'jpalardy/vim-slime'
+"Bundle 'jpalardy/vim-slime'
 Bundle 'tpope/vim-fugitive'
 Bundle 'groenewege/vim-less'
 Bundle 'godlygeek/tabular'
 Bundle 'alfredodeza/jacinto.vim'
 Bundle 'flazz/vim-colorschemes'
+"Bundle 'mxw/vim-jsx'
+Bundle 'guns/vim-clojure-static'
 
 "==================================================================================
 " PLUGINS
 "==================================================================================
 let g:slime_target = "tmux"         " set slime to use tmux
 map <C-n> :NERDTreeTabsToggle<CR>
-                                    " C-n to toggle file browser
-map <C-m> :TagbarToggle<CR>
                                     " C-n to toggle file browser
 
 if has("gui_macvim")
@@ -35,10 +35,19 @@ if has("gui_macvim")
     " colorscheme Monokai
 endif
 
+" syntax-highlight om-tools macro 'defcomponent'
+let g:clojure_syntax_keywords = {
+    \  'clojureDefine': ["defcomponent"]
+    \ }
+
+" Default special indent words (every sub-form indented two spaces)
+let g:clojure_special_indent_words = 'defcomponent,deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
+
 "==================================================================================
 " GENERAL
 "==================================================================================
 
+set vb                              " set visual bell (instead of auditory bell)
 set backspace=indent,eol,start      " make backspace work in insert mode
 
 syntax on                           " use default syntax highlighting colors
@@ -88,3 +97,8 @@ let g:tagbar_type_clojure = {
   \ ]
 \ }
 
+"==================================================================================
+" Project-specific settings
+"==================================================================================
+
+" autocmd BufNewFile,BufRead /Users/swilliam/code/Shipmates/Assets/Scripts/* set tabstop=4 shiftwidth=4 softtabstop=4

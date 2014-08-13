@@ -35,9 +35,10 @@ if has("gui_macvim")
     " colorscheme Monokai
 endif
 
-" syntax-highlight om-tools macro 'defcomponent'
+" custom clojure highlighting for library macros
 let g:clojure_syntax_keywords = {
     \  'clojureDefine': ["defcomponent"]
+    \, 'clojureMacro': ["display-name","init-state","should-update","will-mount","did-mount","will-unmount","will-update","did-update","will-receive-props","render","render-state"]
     \ }
 
 " Default special indent words (every sub-form indented two spaces)

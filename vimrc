@@ -20,6 +20,7 @@ Bundle 'alfredodeza/jacinto.vim'
 Bundle 'flazz/vim-colorschemes'
 "Bundle 'mxw/vim-jsx'
 Bundle 'guns/vim-clojure-static'
+Bundle 'airblade/vim-gitgutter'
 
 "==================================================================================
 " PLUGINS
@@ -33,16 +34,26 @@ if has("gui_macvim")
     " colorscheme railscasts
     colorscheme underwater
     " colorscheme Monokai
+elseif &t_Co == 256
+    " color support seems to be very difficult in terminals (giving up here)
+    " colorscheme underwater
 endif
 
 " custom clojure highlighting for library macros
 let g:clojure_syntax_keywords = {
     \  'clojureDefine': ["defcomponent"]
-    \, 'clojureMacro': ["display-name","init-state","should-update","will-mount","did-mount","will-unmount","will-update","did-update","will-receive-props","render","render-state"]
+    \, 'clojureFunc': ["<!",">!","put!","take!","alts!","alt!","close!","chan","timeout"]
+    \, 'clojureMacro': ["display-name","init-state","should-update","will-mount","did-mount","will-unmount","will-update","did-update","will-receive-props","render","render-state"
+    \,                  "go","go-loop"]
     \ }
 
 " Default special indent words (every sub-form indented two spaces)
+" (plus defcomponent)
 let g:clojure_special_indent_words = 'defcomponent,deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
+
+" Default special indent patterns (every sub-form indented two spaces)
+" (plus go and go-loop)
+let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^go']
 
 "==================================================================================
 " GENERAL
@@ -75,6 +86,9 @@ set nowrap
 
 autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+" git gutter settings
+highlight clear SignColumn
 
 "==================================================================================
 " Tagbar languages

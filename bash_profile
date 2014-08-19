@@ -17,13 +17,3 @@ set -o vi
 
 shopt -s extglob  # extended glob
 shopt -s lithist  # literal history (keep newlines)
-
-# Using this to generate hashes for UID-CSS
-# from: https://twitter.com/kenitter/status/2917714802
-hash ()
-{
-  for i in $(seq 1 5); do
-    echo -n $(echo "obase=16; $(($RANDOM % 16))" | bc );
-  done | tr '[:upper:]' '[:lower:]'
-  echo
-}

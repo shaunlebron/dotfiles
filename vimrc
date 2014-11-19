@@ -5,22 +5,26 @@
 "==================================================================================
 set nocompatible
 filetype off
-set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'kien/ctrlp.vim'
-Bundle 'scrooloose/nerdtree'
-Bundle 'jistr/vim-nerdtree-tabs'
-Bundle 'majutsushi/tagbar'
-"Bundle 'jpalardy/vim-slime'
-Bundle 'tpope/vim-fugitive'
-Bundle 'groenewege/vim-less'
-Bundle 'godlygeek/tabular'
-Bundle 'alfredodeza/jacinto.vim'
-Bundle 'flazz/vim-colorschemes'
-"Bundle 'mxw/vim-jsx'
-Bundle 'guns/vim-clojure-static'
-Bundle 'airblade/vim-gitgutter'
+set rtp+=~/.vim/bundle/Vundle.vim
+
+call vundle#begin()
+Plugin 'gmarik/vundle'
+Plugin 'kien/ctrlp.vim'
+Plugin 'scrooloose/nerdtree'
+Plugin 'jistr/vim-nerdtree-tabs'
+Plugin 'majutsushi/tagbar'
+"Plugin 'jpalardy/vim-slime'
+Plugin 'tpope/vim-fugitive'
+Plugin 'groenewege/vim-less'
+Plugin 'godlygeek/tabular'
+Plugin 'alfredodeza/jacinto.vim'
+Plugin 'flazz/vim-colorschemes'
+"Plugin 'mxw/vim-jsx'
+Plugin 'guns/vim-clojure-static'
+Plugin 'airblade/vim-gitgutter'
+call vundle#end()
+
+filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
 
 "==================================================================================
 " PLUGINS
@@ -33,6 +37,7 @@ if has("gui_macvim")
     " colorscheme bclear
     " colorscheme railscasts
     colorscheme underwater
+    set guifont=Menlo\ Regular:h14
     " colorscheme Monokai
 elseif &t_Co == 256
     " color support seems to be very difficult in terminals (giving up here)
@@ -64,7 +69,6 @@ set backspace=indent,eol,start      " make backspace work in insert mode
 
 syntax on                           " use default syntax highlighting colors
 set autoindent                      " simple indent (follows preceding line)
-filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
 set number                          " number lines
 
 set nofoldenable

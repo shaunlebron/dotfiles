@@ -6,12 +6,14 @@ are as important as the code that I write, so it is worth saving.
 
 To recover:
 ```
-ln -s bash_profile ~/.bash_profile
-ln -s vimrc ~/.vimrc
-ln -s screenrc ~/.screenrc
-ln -s tmux.conf ~/.tmux.conf
-ln -s ctags ~/.ctags
-ln -s lein_profiles.clj ~/.lein/profiles.clj
+DOTDIR=$(cwd)
+cd ~
+ln -s $DOTDIR/bash_profile .bash_profile
+ln -s $DOTDIR/vimrc .vimrc
+ln -s $DOTDIR/screenrc .screenrc
+ln -s $DOTDIR/tmux.conf .tmux.conf
+ln -s $DOTDIR/ctags .ctags
+ln -s $DOTDIR/lein_profiles.clj .lein/profiles.clj
 ```
 
 Resources

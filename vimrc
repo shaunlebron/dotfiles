@@ -49,12 +49,13 @@ let g:clojure_syntax_keywords = {
     \  'clojureDefine': ["defcomponent"]
     \, 'clojureFunc': ["<!",">!","put!","take!","alts!","alt!","close!","chan","timeout"]
     \, 'clojureMacro': ["display-name","init-state","should-update","will-mount","did-mount","will-unmount","will-update","did-update","will-receive-props","render","render-state"
-    \,                  "go","go-loop"]
+    \,                  "go","go-loop"
+    \,                  "match"]
     \ }
 
 " Default special indent words (every sub-form indented two spaces)
 " (plus defcomponent)
-let g:clojure_special_indent_words = 'defcomponent,deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn'
+let g:clojure_special_indent_words = 'defcomponent,deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn,match'
 
 " Default special indent patterns (every sub-form indented two spaces)
 " (plus go and go-loop)

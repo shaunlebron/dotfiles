@@ -29,6 +29,10 @@ filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
 "==================================================================================
 " PLUGINS
 "==================================================================================
+
+" allows us to use % inside an xml tag to go to its counterpart tag
+runtime macros/matchit.vim
+
 let g:slime_target = "tmux"         " set slime to use tmux
 map <C-n> :NERDTreeTabsToggle<CR>
                                     " C-n to toggle file browser

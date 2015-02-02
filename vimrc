@@ -22,6 +22,7 @@ Plugin 'flazz/vim-colorschemes'
 "Plugin 'mxw/vim-jsx'
 Plugin 'guns/vim-clojure-static'
 Plugin 'airblade/vim-gitgutter'
+Plugin 'elzr/vim-json'
 call vundle#end()
 
 filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
@@ -36,6 +37,8 @@ runtime macros/matchit.vim
 let g:slime_target = "tmux"         " set slime to use tmux
 map <C-n> :NERDTreeTabsToggle<CR>
                                     " C-n to toggle file browser
+
+let g:vim_json_syntax_conceal = 0
 
 if has("gui_macvim")
     " colorscheme bclear

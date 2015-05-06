@@ -13,7 +13,7 @@ Plugin 'kien/ctrlp.vim'
 Plugin 'scrooloose/nerdtree'
 Plugin 'jistr/vim-nerdtree-tabs'
 Plugin 'majutsushi/tagbar'
-"Plugin 'jpalardy/vim-slime'
+Plugin 'jpalardy/vim-slime'
 Plugin 'tpope/vim-fugitive'
 Plugin 'groenewege/vim-less'
 Plugin 'godlygeek/tabular'
@@ -23,6 +23,7 @@ Plugin 'flazz/vim-colorschemes'
 Plugin 'guns/vim-clojure-static'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'elzr/vim-json'
+Plugin 'hail2u/vim-css3-syntax'
 call vundle#end()
 
 filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
@@ -96,7 +97,7 @@ set modelines=2                     " look for modeline in last two lines of fil
 
 set nowrap
 
-autocmd BufNewFile,BufReadPost *.cljx setfiletype clojure
+autocmd BufNewFile,BufReadPost *.cljx,*.cljc setfiletype clojure
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 " git gutter settings

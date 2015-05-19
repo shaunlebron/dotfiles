@@ -103,6 +103,9 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 " git gutter settings
 highlight clear SignColumn
 
+" highlight matching paren
+hi MatchParen guibg=#000000
+
 "==================================================================================
 " Tagbar languages
 "==================================================================================

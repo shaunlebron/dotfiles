@@ -24,6 +24,7 @@ Plugin 'guns/vim-clojure-static'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'elzr/vim-json'
 Plugin 'hail2u/vim-css3-syntax'
+Plugin 'vim-scripts/paredit.vim'
 call vundle#end()
 
 filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]

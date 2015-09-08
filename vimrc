@@ -25,6 +25,8 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'elzr/vim-json'
 Plugin 'hail2u/vim-css3-syntax'
 Plugin 'vim-scripts/paredit.vim'
+Plugin 'sukima/asciidoc-vim'
+Plugin 'tpope/vim-liquid'
 call vundle#end()
 
 filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
@@ -100,6 +102,8 @@ set nowrap
 
 autocmd BufNewFile,BufReadPost *.cljx,*.cljc setfiletype clojure
 autocmd BufNewFile,BufRead *.md set filetype=markdown
+autocmd BufNewFile,BufRead *.cljsdoc set filetype=
+autocmd BufNewFile,BufRead *.adoc set filetype=asciidoc
 
 " git gutter settings
 highlight clear SignColumn

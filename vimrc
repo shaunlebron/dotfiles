@@ -27,6 +27,9 @@ Plugin 'hail2u/vim-css3-syntax'
 Plugin 'vim-scripts/paredit.vim'
 Plugin 'sukima/asciidoc-vim'
 Plugin 'tpope/vim-liquid'
+Plugin 'othree/yajs.vim'
+Plugin 'kchmck/vim-coffee-script'
+Plugin 'editorconfig/editorconfig-vim'
 call vundle#end()
 
 filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
@@ -58,7 +61,7 @@ endif
 " custom clojure highlighting for library macros
 let g:clojure_syntax_keywords = {
     \  'clojureDefine': ["defcomponent"]
-    \, 'clojureFunc': ["<!",">!","put!","take!","alts!","alt!","close!","chan","timeout"]
+    \, 'clojureFunc': ["<!",">!","put!","take!","alts!","alt!","close!","chan","timeout","update"]
     \, 'clojureMacro': ["display-name","init-state","should-update","will-mount","did-mount","will-unmount","will-update","did-update","will-receive-props","render","render-state"
     \,                  "go","go-loop"
     \,                  "match"]

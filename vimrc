@@ -19,17 +19,24 @@ Plugin 'groenewege/vim-less'
 Plugin 'godlygeek/tabular'
 Plugin 'alfredodeza/jacinto.vim'
 Plugin 'flazz/vim-colorschemes'
-"Plugin 'mxw/vim-jsx'
+Plugin 'mxw/vim-jsx'
 Plugin 'guns/vim-clojure-static'
 Plugin 'airblade/vim-gitgutter'
 Plugin 'elzr/vim-json'
 Plugin 'hail2u/vim-css3-syntax'
-Plugin 'vim-scripts/paredit.vim'
 Plugin 'sukima/asciidoc-vim'
 Plugin 'tpope/vim-liquid'
 Plugin 'othree/yajs.vim'
 Plugin 'kchmck/vim-coffee-script'
 Plugin 'editorconfig/editorconfig-vim'
+Plugin 'keith/swift.vim'
+Plugin 'wavded/vim-stylus'
+Plugin 'Cirru/vim-cirru'
+Plugin 'plasticboy/vim-markdown'
+if has("nvim")
+  Plugin 'neovim/node-host'
+  Plugin 'snoe/nvim-parinfer.js'
+end
 call vundle#end()
 
 filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
@@ -53,6 +60,8 @@ if has("gui_macvim")
     colorscheme underwater
     set guifont=Menlo\ Regular:h14
     " colorscheme Monokai
+elseif has("gui_vimr")
+    colorscheme underwater
 elseif &t_Co == 256
     " color support seems to be very difficult in terminals (giving up here)
     " colorscheme underwater
@@ -74,6 +83,9 @@ let g:clojure_special_indent_words = 'defcomponent,deftype,defrecord,reify,proxy
 " Default special indent patterns (every sub-form indented two spaces)
 " (plus go and go-loop)
 let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^go']
+
+" highlight .js files with JSX
+" let g:jsx_ext_required = 0
 
 "==================================================================================
 " GENERAL
@@ -103,7 +115,8 @@ set modelines=2                     " look for modeline in last two lines of fil
 
 set nowrap
 
-autocmd BufNewFile,BufReadPost *.cljx,*.cljc setfiletype clojure
+autocmd BufNewFile,BufReadPost *.cljx,*.cljc,*.boot setfiletype clojure
+autocmd BufNewFile,BufReadPost *.cson setfiletype coffee
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 autocmd BufNewFile,BufRead *.cljsdoc set filetype=
 autocmd BufNewFile,BufRead *.adoc set filetype=asciidoc
@@ -113,6 +126,10 @@ highlight clear SignColumn
 
 " highlight matching paren
 hi MatchParen guibg=#000000
+
+" markdown codeblock langs
+let g:vim_markdown_fenced_languages = ['js=javascript', 'clj=clojure']
+
 
 "==================================================================================
 " Tagbar languages

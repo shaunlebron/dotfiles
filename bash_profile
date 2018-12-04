@@ -5,8 +5,6 @@ alias ls='gls --color --group-directories-first'
 alias grep='grep --color=auto'
 
 BREW=`brew --prefix`
-alias vim="$BREW/bin/vim"
-alias ctags="$BREW/bin/ctags"
 
 function parse_git_branch () {
   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
@@ -21,3 +19,7 @@ set -o vi
 
 shopt -s extglob  # extended glob
 shopt -s lithist  # literal history (keep newlines)
+
+export NVM_DIR="/Users/swilliam/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+

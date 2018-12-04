@@ -1,58 +1,50 @@
-"==================================================================================
-" VUNDLE (auto-install plugins):
-" > git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
-" > vim +BundleInstall
-"==================================================================================
 set nocompatible
-filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
 
-call vundle#begin()
-Plugin 'gmarik/vundle'
-Plugin 'kien/ctrlp.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'jistr/vim-nerdtree-tabs'
-Plugin 'majutsushi/tagbar'
-Plugin 'jpalardy/vim-slime'
-Plugin 'tpope/vim-fugitive'
-Plugin 'groenewege/vim-less'
-Plugin 'godlygeek/tabular'
-Plugin 'alfredodeza/jacinto.vim'
-Plugin 'flazz/vim-colorschemes'
-Plugin 'mxw/vim-jsx'
-Plugin 'guns/vim-clojure-static'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'elzr/vim-json'
-Plugin 'hail2u/vim-css3-syntax'
-Plugin 'sukima/asciidoc-vim'
-Plugin 'tpope/vim-liquid'
-Plugin 'othree/yajs.vim'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'editorconfig/editorconfig-vim'
-Plugin 'keith/swift.vim'
-Plugin 'wavded/vim-stylus'
-Plugin 'Cirru/vim-cirru'
-Plugin 'plasticboy/vim-markdown'
-if has("nvim")
-  Plugin 'neovim/node-host'
-  Plugin 'snoe/nvim-parinfer.js'
-end
-call vundle#end()
+if empty(glob('~/.vim/autoload/plug.vim'))
+  silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs
+    \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+  autocmd VimEnter * PlugInstall --sync | source $MYVIMRC
+endif
 
-filetype plugin indent on           " filetype[ON] plugin[ON] indent[ON]
+call plug#begin('~/.vim/plugged')
+
+" core
+Plug 'kien/ctrlp.vim'
+Plug 'scrooloose/nerdtree'
+Plug 'jistr/vim-nerdtree-tabs'
+Plug 'godlygeek/tabular'
+Plug 'airblade/vim-gitgutter'
+
+" javascript
+Plug 'pangloss/vim-javascript'
+Plug 'othree/yajs.vim'
+Plug 'mxw/vim-jsx'
+Plug 'elzr/vim-json'
+Plug 'prettier/vim-prettier', { 'do': 'yarn install' }
+
+" other langs
+Plug 'hail2u/vim-css3-syntax'
+Plug 'plasticboy/vim-markdown'
+Plug 'guns/vim-clojure-static'
+
+" colors
+Plug 'flazz/vim-colorschemes'
+
+" fullscreen typography
+Plug 'junegunn/goyo.vim'
+
+call plug#end()
 
 "==================================================================================
 " PLUGINS
 "==================================================================================
 
-" allows us to use % inside an xml tag to go to its counterpart tag
-runtime macros/matchit.vim
-
-let g:slime_target = "tmux"         " set slime to use tmux
+" C-n to toggle file browser
 map <C-n> :NERDTreeTabsToggle<CR>
-                                    " C-n to toggle file browser
 
-let g:vim_json_syntax_conceal = 0
+"==================================================================================
+" GUI
+"==================================================================================
 
 if has("gui_macvim")
     " colorscheme bclear
@@ -62,30 +54,23 @@ if has("gui_macvim")
     " colorscheme Monokai
 elseif has("gui_vimr")
     colorscheme underwater
+
+    " Set the working directory to the first buffer opened
+    au BufEnter * :cd %:p:h 
 elseif &t_Co == 256
     " color support seems to be very difficult in terminals (giving up here)
     " colorscheme underwater
 endif
 
-" custom clojure highlighting for library macros
-let g:clojure_syntax_keywords = {
-    \  'clojureDefine': ["defcomponent"]
-    \, 'clojureFunc': ["<!",">!","put!","take!","alts!","alt!","close!","chan","timeout","update"]
-    \, 'clojureMacro': ["display-name","init-state","should-update","will-mount","did-mount","will-unmount","will-update","did-update","will-receive-props","render","render-state"
-    \,                  "go","go-loop"
-    \,                  "match"]
-    \ }
+"==================================================================================
+" Mouse
+"==================================================================================
 
-" Default special indent words (every sub-form indented two spaces)
-" (plus defcomponent)
-let g:clojure_special_indent_words = 'defcomponent,deftype,defrecord,reify,proxy,extend-type,extend-protocol,letfn,match'
+set mouse=a
+if has("mouse_sgr")
+  set ttymouse=sgr
+end
 
-" Default special indent patterns (every sub-form indented two spaces)
-" (plus go and go-loop)
-let g:clojure_fuzzy_indent_patterns = ['^with', '^def', '^let', '^go']
-
-" highlight .js files with JSX
-" let g:jsx_ext_required = 0
 
 "==================================================================================
 " GENERAL
@@ -130,28 +115,16 @@ hi MatchParen guibg=#000000
 " markdown codeblock langs
 let g:vim_markdown_fenced_languages = ['js=javascript', 'clj=clojure']
 
+" make prettier plugin use prettier's defaults
+let g:prettier#config#single_quote = 'false'
+let g:prettier#config#bracket_spacing = 'true'
+let g:prettier#config#jsx_bracket_same_line = 'false'
+let g:prettier#config#arrow_parens = 'avoid'
+let g:prettier#config#trailing_comma = 'none'
+let g:prettier#config#parser = 'babylon'
 
-"==================================================================================
-" Tagbar languages
-"==================================================================================
-
-let g:tagbar_type_clojure = {
-  \ 'ctagstype' : 'clojure',
-  \ 'kinds' : [
-    \ 'n:namespace',
-    \ 'z:atom',
-    \ 'd:definition',
-    \ 'f:function',
-    \ 'm:macro',
-    \ 'i:inline',
-    \ 'a:multimethod definition',
-    \ 'b:multimethod instance',
-    \ 'c:definition (once)',
-    \ 's:struct',
-    \ 'v:intern',
-    \ 'h:hiccup template'
-  \ ]
-\ }
+" dont hide json key quotes
+let g:vim_json_syntax_conceal = 0
 
 "==================================================================================
 " Project-specific settings

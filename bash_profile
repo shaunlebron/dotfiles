@@ -1,5 +1,8 @@
 export PATH=~/bin:$PATH
 
+alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
+alias audacity='/Applications/Audacity.app/Contents/MacOS/Audacity'
+
 # installed from `brew install coreutils`
 alias ls='gls --color --group-directories-first'
 alias grep='grep --color=auto'
@@ -18,8 +21,8 @@ export VISUAL="vim"
 set -o vi
 
 shopt -s extglob  # extended glob
+#shopt -s globstar  # so we can use **/*.ext for recursive search
 shopt -s lithist  # literal history (keep newlines)
 
-export NVM_DIR="/Users/swilliam/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-
+export PATH="$HOME/.cargo/bin:$PATH"
+export PATH="~/.vim/plugged/vim-iced/bin:$PATH"

@@ -90,7 +90,7 @@ if has("gui_macvim")
   au OSAppearanceChanged * call ChangeBackground()
 endif
 
-map <C-L> :call ChangeBackground()<CR>
+map <silent> <C-L> :call ChangeBackground()<CR>
 
 "==================================================================================
 " Mouse

@@ -1,7 +1,4 @@
-export PATH=~/bin:$PATH
-
-alias vlc='/Applications/VLC.app/Contents/MacOS/VLC'
-alias audacity='/Applications/Audacity.app/Contents/MacOS/Audacity'
+export PATH=~/bin:/opt/homebrew/bin:$PATH
 
 # installed from `brew install coreutils`
 alias ls='gls --color --group-directories-first'
@@ -24,5 +21,3 @@ shopt -s extglob  # extended glob
 #shopt -s globstar  # so we can use **/*.ext for recursive search
 shopt -s lithist  # literal history (keep newlines)
 
-export PATH="$HOME/.cargo/bin:$PATH"
-export PATH="~/.vim/plugged/vim-iced/bin:$PATH"

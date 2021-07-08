@@ -81,7 +81,7 @@ func! ChangeBackground()
     set background=light
     colorscheme bclear
   endif
-  redraw!
+  "redraw!
 endfunc
 
 

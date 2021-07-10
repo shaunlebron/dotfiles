@@ -1,3 +1,5 @@
+export BASH_SILENCE_DEPRECATION_WARNING=1
+
 export PATH=~/bin:/opt/homebrew/bin:$PATH
 
 # installed from `brew install coreutils`

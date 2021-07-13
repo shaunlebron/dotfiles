@@ -50,6 +50,14 @@ call plug#end()
 " C-n to toggle file browser
 "map <C-n> :NERDTreeTabsToggle<CR>
 
+" fuzzy search tags
+map <C-t> :CtrlPTag<CR>
+
+" after running Ggrep, open results in a quickfix window
+autocmd QuickFixCmdPost *grep* cwindow
+map <C-j> :cn<CR>
+map <C-k> :cp<CR>
+
 "==================================================================================
 " GUI
 "==================================================================================

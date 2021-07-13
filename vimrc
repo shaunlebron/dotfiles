@@ -51,7 +51,8 @@ call plug#end()
 "map <C-n> :NERDTreeTabsToggle<CR>
 
 " fuzzy search tags
-map <C-t> :CtrlPTag<CR>
+nnoremap <C-t> :CtrlPTag<CR>
+nnoremap <C-[> :pop<CR>
 
 " after running Ggrep, open results in a quickfix window
 autocmd QuickFixCmdPost *grep* cwindow

@@ -1,0 +1,14 @@
+--langdef=Clojure
+--langmap=Clojure:.clj
+--regex-clojure=/\(create-ns ([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
+--regex-clojure=/\(def ([-[:alnum:]*+!_:\/.?]+)/\1/d,definition/
+--regex-clojure=/\(defn-? ([-[:alnum:]*+!_:\/.?]+)/\1/f,function/
+--regex-clojure=/\(s\/defn-? ([-[:alnum:]*+!_:\/.?]+)/\1/f,function/
+--regex-clojure=/\(defmacro ([-[:alnum:]*+!_:\/.?]+)/\1/m,macro/
+--regex-clojure=/\(definline ([-[:alnum:]*+!_:\/.?]+)/\1/i,inline/
+--regex-clojure=/\(defmulti ([-[:alnum:]*+!_:\/.?]+)/\1/a,multimethod definition/
+--regex-clojure=/\(defmethod ([-[:alnum:]*+!_:\/.?]+)/\1/b,multimethod instance/
+--regex-clojure=/\(defonce ([-[:alnum:]*+!_:\/.?]+)/\1/c,definition (once)/
+--regex-clojure=/\(defstruct ([-[:alnum:]*+!_:\/.?]+)/\1/s,struct/
+--regex-clojure=/\(intern ([-[:alnum:]*+!_:\/.?]+)/\1/v,intern/
+--regex-clojure=/\(ns ([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/

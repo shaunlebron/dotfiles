@@ -1,5 +1,7 @@
 --langdef=Clojure
 --langmap=Clojure:.clj
+--langmap=Clojure:+.cljs
+--langmap=Clojure:+.cljc
 --regex-clojure=/\(create-ns ([-[:alnum:]*+!_:\/.?]+)/\1/n,namespace/
 --regex-clojure=/\(def ([-[:alnum:]*+!_:\/.?]+)/\1/d,definition/
 --regex-clojure=/\(defn-? ([-[:alnum:]*+!_:\/.?]+)/\1/f,function/

@@ -39,7 +39,8 @@ Plug 'joshdick/onedark.vim'
 " fullscreen typography
 Plug 'junegunn/goyo.vim'
 
-Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-fugitive' " Git
+Plug 'tpope/vim-rhubarb' " GitHub
 
 call plug#end()
 
@@ -53,6 +54,7 @@ call plug#end()
 " fuzzy search tags
 nnoremap <C-t> :CtrlPTag<CR>
 nnoremap <C-[> :pop<CR>
+nnoremap <C-g> :Ggrep 
 
 " after running Ggrep, open results in a quickfix window
 autocmd QuickFixCmdPost *grep* cwindow

@@ -3,6 +3,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 export PATH=~/bin:/opt/homebrew/bin:$PATH
 
 # installed from `brew install coreutils`
+alias vim='nvim'
 alias ls='gls --color --group-directories-first'
 alias grep='grep --color=auto'
 

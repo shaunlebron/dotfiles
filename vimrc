@@ -58,8 +58,10 @@ nnoremap <C-g> :Ggrep
 
 " after running Ggrep, open results in a quickfix window
 autocmd QuickFixCmdPost *grep* cwindow
-map <C-j> :cn<CR>
-map <C-k> :cp<CR>
+nnoremap <C-j> :cn<CR>
+nnoremap <C-k> :cp<CR>
+
+nnoremap <Esc> <C-c>
 
 "==================================================================================
 " GUI
